@@ -1,0 +1,265 @@
+import java.util.Scanner;
+class Pattern
+{
+    public static void main(String[]args)
+    {
+        A a1=new A();
+        a1.pattern();
+        a1.box();
+        a1.rightAngledPattern();
+        a1.invertedRightAngledPattern();
+        a1.pyramid();
+        a1.haloPyramid();
+        a1.reversePyramid();
+        a1.HaloReversePyramid();
+        a1.diamond();
+        a1.haloDiamond();
+    }
+}
+class A 
+{
+    int rows;
+    int columns;
+    int row;
+    A()
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter number of rows:");
+        rows=s.nextInt();
+        System.out.println("enter number of columns:");
+        columns=s.nextInt();
+        System.out.println("enter number of rows for diamond:");
+        row=s.nextInt();
+    }
+    void pattern()
+    {
+         System.out.println("----------------------------------------------");
+        System.out.println("Pattern with all stars");
+        for(int i=1;i<=rows;i++)
+        {
+            for(int j=1;j<=columns;j++)
+            {
+                System.out.print("*");
+            }
+        System.out.println();
+        }
+        System.out.println("----------------------------------------------");
+    }
+    void box()
+    {
+        System.out.println("Pattern with box");
+        for(int i=1;i<=rows;i++)
+        {
+            for(int j=1;j<=columns;j++)
+            {
+                if(i==1 || j==1 || i==columns || j==columns)
+                {
+                System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+        System.out.println();
+        }
+        System.out.println("----------------------------------------------");
+    }
+    void rightAngledPattern()
+    {
+        System.out.println("Right angled pattern");
+     for(int i=1;i<=rows;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+        System.out.println();
+        }
+        System.out.println("----------------------------------------------");
+    }
+    void invertedRightAngledPattern()
+    {
+            System.out.println("Inverted Right angled pattern");
+     for(int i=1;i<=rows;i++)
+        {
+            for(int j=i;j<=columns;j++)
+            {
+                System.out.print("*");
+            }
+        System.out.println();
+        }
+        System.out.println("----------------------------------------------");
+    }
+    void pyramid()
+    {
+        int stars=1;
+        int spaces=rows-1;
+        System.out.println("Pyramid pattern");
+         for(int i=1;i<=rows;i++)
+         {
+             for(int j=1;j<=spaces;j++)
+             {
+                System.out.print(" ");
+             }
+             for(int k=1;k<=stars;k++)
+             {
+                System.out.print("*");
+             }
+             System.out.println();
+             spaces--;
+             stars+=2;
+         }
+         System.out.println("----------------------------------------------");
+    }
+    void reversePyramid()
+    {
+        int stars=9;
+        int spaces=0;
+        System.out.println("Reverse Pyramid pattern");
+         for(int i=1;i<=rows;i++)
+         {
+             for(int j=1;j<=spaces;j++)
+             {
+                System.out.print(" ");
+             }
+             for(int k=1;k<=stars;k++)
+             {
+                System.out.print("*");
+             }
+             System.out.println();
+             spaces++;
+             stars-=2;
+         }
+         System.out.println("----------------------------------------------");
+    }
+    void HaloReversePyramid()
+    {
+        int stars=9;
+        int spaces=0;
+        System.out.println("Halo Reverse Pyramid pattern");
+         for(int i=1;i<=rows;i++)
+         {
+             for(int j=1;j<=spaces;j++)
+             {
+                System.out.print(" ");
+             }
+             for(int k=1;k<=stars;k++)
+             {
+                 if(i==1 || k==1 || k==stars)
+                 {
+                System.out.print("*");
+                 }
+                 else
+                 {
+                     System.out.print(" ");
+                 }
+             }
+             System.out.println();
+             spaces++;
+             stars-=2;
+         }
+         System.out.println("----------------------------------------------");
+    }
+    void diamond()
+    {
+        if(row%2==0)
+        {
+            row+=1;
+        }
+        int stars=1;
+        int spaces=row/2;
+        System.out.println("Diamond pattern");
+         for(int i=1;i<=row;i++)
+         {
+             for(int j=1;j<=spaces;j++)
+             {
+                System.out.print(" ");
+             }
+             for(int k=1;k<=stars;k++)
+             {
+                System.out.print("*");
+             }
+             System.out.println();
+             if(i<row/2+1)
+             {
+             spaces--;
+             stars+=2;
+             }
+             else
+             {
+                spaces++;
+                stars-=2;
+             }
+         }
+         System.out.println("----------------------------------------------");
+    }
+ void haloDiamond()
+    {
+        if(row%2==0)
+        {
+            row+=1;
+        }
+        int stars=1;
+        int spaces=row/2;
+        System.out.println("Halo Diamond pattern");
+         for(int i=1;i<=row;i++)
+         {
+             for(int j=1;j<=spaces;j++)
+             {
+                System.out.print(" ");
+             }
+             for(int k=1;k<=stars;k++)
+             {
+                 if(k==stars || k==1)
+                 {
+                System.out.print("*");
+                 }
+                 else
+                 {
+                System.out.print(" ");
+                 }
+             }
+             System.out.println();
+             if(i<row/2+1)
+             {
+             spaces--;
+             stars+=2;
+             }
+             else
+             {
+                spaces++;
+                stars-=2;
+             }
+         }
+         System.out.println("-----------------------------------------------");
+    }
+    void haloPyramid()
+    {
+    int spaces=rows-1;
+    int stars=1;
+    System.out.println("Halo pyramid pattern");
+    for(int i=1;i<=rows;i++)
+    {
+        for(int j=1;j<=spaces;j++)
+        {
+            System.out.print(" ");
+        }
+        for(int k=1;k<=stars;k++)
+        {
+            if(k==1 || i==rows || k==stars)
+            {
+                System.out.print("*");
+            }
+            else
+            {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+        spaces--;
+        stars+=2;
+    }
+    System.out.println("-----------------------------------------------");
+}
+}
