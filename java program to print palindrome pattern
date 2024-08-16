@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class A 
+{
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int num=1;
+        for(int i=1;i<=n;i++)
+        {
+            int num1=num;
+            num=num1+1;
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=1;k<=i;k++)
+            {
+                System.out.print(num1);
+                num1--;
+            }
+            int num2=1;
+            for(int l=1;l<=i;l++)
+            {
+                System.out.print(num2);
+                num2++;
+            }
+            System.out.println();
+        }
+    }
+}
