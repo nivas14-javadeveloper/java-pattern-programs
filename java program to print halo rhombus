@@ -7,7 +7,7 @@ class A
         System.out.println("enter a number:");
         int n=s.nextInt();
         int space=0;
-        int star=n-1;
+        int star=n;
         if(n%2==0)
     {
         n++;
